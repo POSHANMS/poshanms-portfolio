@@ -5,46 +5,38 @@ const Skills = () => {
     {
       title: "Programming Languages",
       icon: Code,
-      skills: [
-        { name: "Python", level: 90 },
-        { name: "Java", level: 85 },
-        { name: "C++", level: 80 },
-        { name: "C", level: 75 },
-      ],
+      skills: ["C", "Java", "Python"],
       color: "primary"
     },
     {
       title: "Web Development", 
       icon: Globe,
-      skills: [
-        { name: "HTML/CSS", level: 90 },
-        { name: "JavaScript", level: 80 },
-        { name: "React", level: 75 },
-        { name: "Node.js", level: 70 },
-      ],
+      skills: ["HTML/CSS", "JavaScript", "basic front-end frameworks"],
       color: "accent"
     },
     {
-      title: "Database & Data",
+      title: "Databases",
       icon: Database,
-      skills: [
-        { name: "MySQL", level: 85 },
-        { name: "MongoDB", level: 80 },
-        { name: "Pandas", level: 85 },
-        { name: "Matplotlib", level: 80 },
-      ],
+      skills: ["MySQL", "MongoDB (basic CRUD)"],
       color: "success"
     },
     {
       title: "Tools & Platforms",
       icon: Terminal,
-      skills: [
-        { name: "Git/GitHub", level: 90 },
-        { name: "VS Code", level: 95 },
-        { name: "Linux", level: 75 },
-        { name: "Docker", level: 60 },
-      ],
+      skills: ["Git/GitHub", "Visual Studio Code", "basic Linux commands"],
       color: "primary"
+    },
+    {
+      title: "Software Development",
+      icon: Cpu,
+      skills: ["Object-oriented programming", "problem-solving", "algorithm design"],
+      color: "accent"
+    },
+    {
+      title: "Data Visualization",
+      icon: Wrench,
+      skills: ["Matplotlib (Python)"],
+      color: "success"
     }
   ];
 
@@ -99,20 +91,14 @@ const Skills = () => {
                   <h3 className="text-lg font-bold text-foreground">{category.title}</h3>
                 </div>
 
-                <div className="space-y-4">
+                <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex}>
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-sm font-medium text-foreground">{skill.name}</span>
-                        <span className={`text-xs font-bold ${colorClasses.text}`}>{skill.level}%</span>
-                      </div>
-                      <div className="w-full bg-muted rounded-full h-2">
-                        <div 
-                          className={`h-2 rounded-full ${colorClasses.progress} transition-all duration-1000 ease-out`}
-                          style={{ width: `${skill.level}%` }}
-                        ></div>
-                      </div>
-                    </div>
+                    <span
+                      key={skillIndex}
+                      className={`px-3 py-2 rounded-full text-sm font-medium transition-smooth ${colorClasses.bg} ${colorClasses.text}`}
+                    >
+                      {skill}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -120,14 +106,13 @@ const Skills = () => {
           })}
         </div>
 
-        {/* Additional Skills Tags */}
+        {/* Additional Technologies */}
         <div className="mt-16">
-          <h3 className="text-2xl font-bold text-center text-foreground mb-8">Additional Technologies</h3>
+          <h3 className="text-2xl font-bold text-center text-foreground mb-8">Additional Technologies / Interests</h3>
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              "Machine Learning", "Deep Learning", "AI Development", "OpenAI API",
-              "Authentication Systems", "RESTful APIs", "Object-Oriented Programming", 
-              "Algorithm Design", "Data Structures", "Software Architecture"
+              "Machine Learning", "Deep Learning", "AI Development", "Cybersecurity",
+              "Object-Oriented Programming", "Data Structures"
             ].map((tech, index) => (
               <span 
                 key={index}

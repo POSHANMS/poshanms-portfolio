@@ -28,20 +28,75 @@ const Hero = () => {
 
           {/* Hero Content */}
           <div className="flex-1 text-center lg:text-left">
-            <div className="space-y-6">
-              <div>
-                <h1 className="text-5xl lg:text-6xl font-bold text-foreground mb-4">
-                  Hi, I'm{" "}
-                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                    Poshan M S
-                  </span>
-                </h1>
-                <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed">
-                  A Computer Science and Engineering student passionate about{" "}
-                  <span className="text-primary font-semibold">technology</span>,{" "}
-                  <span className="text-accent font-semibold">problem-solving</span>, and building{" "}
-                  <span className="text-primary font-semibold">innovative software solutions</span>.
-                </p>
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <div>
+                  <h1 className="text-5xl lg:text-7xl font-bold text-foreground mb-6">
+                    Hi, I'm{" "}
+                    <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                      Poshan M S
+                    </span>
+                  </h1>
+                  <div className="space-y-4">
+                    <h2 className="text-2xl lg:text-3xl font-semibold text-primary">
+                      Full Stack Developer / Software Developer
+                    </h2>
+                    <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
+                      Computer Science & Engineering student • Building reliable web & software solutions • Cybersecurity enthusiast
+                    </p>
+                  </div>
+                </div>
+
+                {/* Education */}
+                <div className="bg-card/50 rounded-xl p-6 backdrop-blur-sm border border-primary/10">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">Education</h3>
+                  <p className="text-muted-foreground">
+                    B.Tech, Computer Science & Engineering — Navkis College of Engineering<br />
+                    4th year (7th semester) — <span className="text-primary font-semibold">CGPA: 7.88</span>
+                  </p>
+                </div>
+
+                {/* Profile Links */}
+                <div className="bg-card/50 rounded-xl p-6 backdrop-blur-sm border border-accent/10">
+                  <h3 className="text-lg font-semibold text-foreground mb-4">Connect & Profiles</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    <a href="https://www.linkedin.com/in/poshan-ms-457200382" target="_blank" rel="noopener noreferrer" 
+                       className="flex items-center gap-2 p-2 rounded-lg bg-background/50 hover:bg-primary/10 transition-smooth group">
+                      <div className="w-8 h-8 bg-[#0077B5] rounded flex items-center justify-center">
+                        <span className="text-white text-xs font-bold">in</span>
+                      </div>
+                      <span className="text-sm text-foreground group-hover:text-primary">LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/POSHANMS" target="_blank" rel="noopener noreferrer"
+                       className="flex items-center gap-2 p-2 rounded-lg bg-background/50 hover:bg-primary/10 transition-smooth group">
+                      <div className="w-8 h-8 bg-foreground rounded flex items-center justify-center">
+                        <span className="text-background text-xs font-bold">GH</span>
+                      </div>
+                      <span className="text-sm text-foreground group-hover:text-primary">GitHub</span>
+                    </a>
+                    <a href="https://leetcode.com/u/oeISZpmw6b/" target="_blank" rel="noopener noreferrer"
+                       className="flex items-center gap-2 p-2 rounded-lg bg-background/50 hover:bg-primary/10 transition-smooth group">
+                      <div className="w-8 h-8 bg-[#FFA116] rounded flex items-center justify-center">
+                        <span className="text-white text-xs font-bold">LC</span>
+                      </div>
+                      <span className="text-sm text-foreground group-hover:text-primary">LeetCode</span>
+                    </a>
+                    <a href="https://www.geeksforgeeks.org/user/poshanms/" target="_blank" rel="noopener noreferrer"
+                       className="flex items-center gap-2 p-2 rounded-lg bg-background/50 hover:bg-primary/10 transition-smooth group">
+                      <div className="w-8 h-8 bg-[#0F9D58] rounded flex items-center justify-center">
+                        <span className="text-white text-xs font-bold">GFG</span>
+                      </div>
+                      <span className="text-sm text-foreground group-hover:text-primary">GeeksforGeeks</span>
+                    </a>
+                    <a href="https://tryhackme.com/p/poshanms" target="_blank" rel="noopener noreferrer"
+                       className="flex items-center gap-2 p-2 rounded-lg bg-background/50 hover:bg-primary/10 transition-smooth group">
+                      <div className="w-8 h-8 bg-[#C11111] rounded flex items-center justify-center">
+                        <span className="text-white text-xs font-bold">THM</span>
+                      </div>
+                      <span className="text-sm text-foreground group-hover:text-primary">TryHackMe</span>
+                    </a>
+                  </div>
+                </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

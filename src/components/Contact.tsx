@@ -28,29 +28,29 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "poshan.ms@example.com",
-      href: "mailto:poshan.ms@example.com",
+      value: "siddeshwaraprasanna5@gmail.com",
+      href: "mailto:siddeshwaraprasanna5@gmail.com",
       color: "primary"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+91 98765 43210",
-      href: "tel:+919876543210",
+      value: "+91 9535560561",
+      href: "tel:+919535560561",
       color: "accent"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/poshanms",
-      href: "https://linkedin.com/in/poshanms",
+      value: "linkedin.com/in/poshan-ms-457200382",
+      href: "https://www.linkedin.com/in/poshan-ms-457200382",
       color: "primary"
     },
     {
       icon: Github,
       label: "GitHub",
-      value: "github.com/poshanms",
-      href: "https://github.com/poshanms",
+      value: "github.com/POSHANMS",
+      href: "https://github.com/POSHANMS",
       color: "accent"
     }
   ];
