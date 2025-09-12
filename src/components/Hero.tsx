@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import profilePicture from "@/assets/profile-picture.jpg";
-
 const Hero = () => {
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id)?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-primary/5 to-accent/10 relative overflow-hidden">
+  return <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-primary/5 to-accent/10 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl"></div>
@@ -19,11 +18,7 @@ const Hero = () => {
           <div className="flex-shrink-0">
             <div className="relative">
               <div className="w-80 h-80 rounded-full hero-gradient p-1 shadow-2xl">
-                <img
-                  src={profilePicture}
-                  alt="Poshan M S - Computer Science Student"
-                  className="w-full h-full rounded-full object-cover"
-                />
+                <img src={profilePicture} alt="Poshan M S - Computer Science Student" className="w-full h-full rounded-full object-cover" />
               </div>
               {/* Floating elements for visual interest */}
               <div className="absolute -top-4 -right-4 w-12 h-12 bg-accent rounded-full shadow-accent/30 animate-pulse"></div>
@@ -43,9 +38,7 @@ const Hero = () => {
                     </span>
                   </h1>
                   <div className="space-y-4">
-                    <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
-                      Computer Science & Engineering student • Building reliable web & software solutions • Cybersecurity enthusiast
-                    </p>
+                    <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">Computer Science & Engineering student • Building reliable web & software solutions • Cybersecurity</p>
                   </div>
                 </div>
 
@@ -62,36 +55,31 @@ const Hero = () => {
                 <div className="bg-card/50 rounded-xl p-6 backdrop-blur-sm border border-accent/10">
                   <h3 className="text-lg font-semibold text-foreground mb-4">Connect & Profiles</h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                    <a href="https://www.linkedin.com/in/poshan-ms-457200382" target="_blank" rel="noopener noreferrer" 
-                       className="flex items-center gap-2 p-2 rounded-lg bg-background/50 hover:bg-primary/10 transition-smooth group">
+                    <a href="https://www.linkedin.com/in/poshan-ms-457200382" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-2 rounded-lg bg-background/50 hover:bg-primary/10 transition-smooth group">
                       <div className="w-8 h-8 bg-[#0077B5] rounded flex items-center justify-center">
                         <span className="text-white text-xs font-bold">in</span>
                       </div>
                       <span className="text-sm text-foreground group-hover:text-primary">LinkedIn</span>
                     </a>
-                    <a href="https://github.com/POSHANMS" target="_blank" rel="noopener noreferrer"
-                       className="flex items-center gap-2 p-2 rounded-lg bg-background/50 hover:bg-primary/10 transition-smooth group">
+                    <a href="https://github.com/POSHANMS" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-2 rounded-lg bg-background/50 hover:bg-primary/10 transition-smooth group">
                       <div className="w-8 h-8 bg-foreground rounded flex items-center justify-center">
                         <span className="text-background text-xs font-bold">GH</span>
                       </div>
                       <span className="text-sm text-foreground group-hover:text-primary">GitHub</span>
                     </a>
-                    <a href="https://leetcode.com/u/oeISZpmw6b/" target="_blank" rel="noopener noreferrer"
-                       className="flex items-center gap-2 p-2 rounded-lg bg-background/50 hover:bg-primary/10 transition-smooth group">
+                    <a href="https://leetcode.com/u/oeISZpmw6b/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-2 rounded-lg bg-background/50 hover:bg-primary/10 transition-smooth group">
                       <div className="w-8 h-8 bg-[#FFA116] rounded flex items-center justify-center">
                         <span className="text-white text-xs font-bold">LC</span>
                       </div>
                       <span className="text-sm text-foreground group-hover:text-primary">LeetCode</span>
                     </a>
-                    <a href="https://www.geeksforgeeks.org/user/poshanms/" target="_blank" rel="noopener noreferrer"
-                       className="flex items-center gap-2 p-2 rounded-lg bg-background/50 hover:bg-primary/10 transition-smooth group">
+                    <a href="https://www.geeksforgeeks.org/user/poshanms/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-2 rounded-lg bg-background/50 hover:bg-primary/10 transition-smooth group">
                       <div className="w-8 h-8 bg-[#0F9D58] rounded flex items-center justify-center">
                         <span className="text-white text-xs font-bold">GFG</span>
                       </div>
                       <span className="text-sm text-foreground group-hover:text-primary">GeeksforGeeks</span>
                     </a>
-                    <a href="https://tryhackme.com/p/poshanms" target="_blank" rel="noopener noreferrer"
-                       className="flex items-center gap-2 p-2 rounded-lg bg-background/50 hover:bg-primary/10 transition-smooth group">
+                    <a href="https://tryhackme.com/p/poshanms" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-2 rounded-lg bg-background/50 hover:bg-primary/10 transition-smooth group">
                       <div className="w-8 h-8 bg-[#C11111] rounded flex items-center justify-center">
                         <span className="text-white text-xs font-bold">THM</span>
                       </div>
@@ -102,19 +90,10 @@ const Hero = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button
-                  size="lg"
-                  className="hero-gradient text-white border-0 hover:opacity-90 transition-smooth shadow-accent"
-                  onClick={() => scrollToSection('portfolio')}
-                >
+                <Button size="lg" className="hero-gradient text-white border-0 hover:opacity-90 transition-smooth shadow-accent" onClick={() => scrollToSection('portfolio')}>
                   View My Work
                 </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-smooth"
-                  onClick={() => scrollToSection('contact')}
-                >
+                <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-smooth" onClick={() => scrollToSection('contact')}>
                   Get In Touch
                 </Button>
               </div>
@@ -138,8 +117,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
