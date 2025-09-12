@@ -7,22 +7,27 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-background">
-      <div className="container mx-auto px-6 py-20">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-primary/5 to-accent/10 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-r from-accent/10 to-primary/10 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Profile Image */}
           <div className="flex-shrink-0">
             <div className="relative">
-              <div className="w-80 h-80 rounded-full hero-gradient p-1">
+              <div className="w-80 h-80 rounded-full hero-gradient p-1 shadow-2xl">
                 <img
                   src={profilePicture}
                   alt="Poshan M S - Computer Science Student"
-                  className="w-full h-full rounded-full object-cover shadow-accent"
+                  className="w-full h-full rounded-full object-cover"
                 />
               </div>
               {/* Floating elements for visual interest */}
-              <div className="absolute -top-4 -right-4 w-12 h-12 bg-accent rounded-full shadow-soft animate-pulse"></div>
-              <div className="absolute -bottom-6 -left-6 w-8 h-8 bg-primary rounded-full shadow-soft"></div>
+              <div className="absolute -top-4 -right-4 w-12 h-12 bg-accent rounded-full shadow-accent/30 animate-pulse"></div>
+              <div className="absolute -bottom-6 -left-6 w-8 h-8 bg-primary rounded-full shadow-primary/30"></div>
             </div>
           </div>
 
@@ -38,9 +43,6 @@ const Hero = () => {
                     </span>
                   </h1>
                   <div className="space-y-4">
-                    <h2 className="text-2xl lg:text-3xl font-semibold text-primary">
-                      Full Stack Developer / Software Developer
-                    </h2>
                     <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
                       Computer Science & Engineering student • Building reliable web & software solutions • Cybersecurity enthusiast
                     </p>

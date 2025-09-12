@@ -154,14 +154,6 @@ const Portfolio = () => {
                       <Github className="w-4 h-4" />
                       View Code
                     </Button>
-                    <Button 
-                      variant="outline"
-                      className="gap-2"
-                      onClick={() => window.open(project.demo, '_blank')}
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      Live Demo
-                    </Button>
                   </div>
                 </div>
               </div>

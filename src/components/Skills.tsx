@@ -35,7 +35,7 @@ const Skills = () => {
     {
       title: "Data Visualization",
       icon: Wrench,
-      skills: ["Matplotlib (Python)"],
+      skills: ["Matplotlib (Python)", "Pandas"],
       color: "success"
     }
   ];
