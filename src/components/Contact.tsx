@@ -72,13 +72,17 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 section-gradient">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-20 bg-gradient-to-t from-muted/30 to-background relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-accent/10 to-transparent rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Let's <span className="text-primary">Connect</span>
+            Let's <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Connect</span>
           </h2>
-          <div className="w-20 h-1 bg-accent mx-auto mb-4"></div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             I'm always excited to discuss new opportunities, collaborate on projects, or just have a friendly chat about technology
           </p>
@@ -107,7 +111,7 @@ const Contact = () => {
                     <a
                       key={index}
                       href={info.href}
-                      className="flex items-center gap-4 p-4 bg-card rounded-xl shadow-soft hover:shadow-accent/20 transition-smooth group"
+                      className="flex items-center gap-4 p-4 bg-card/80 backdrop-blur-sm rounded-xl shadow-soft hover:shadow-2xl transition-all duration-300 group border border-white/10"
                       target={info.href.startsWith('http') ? '_blank' : '_self'}
                       rel={info.href.startsWith('http') ? 'noopener noreferrer' : ''}
                     >
@@ -138,7 +142,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-card rounded-2xl p-8 shadow-soft">
+            <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white/10 hover:shadow-accent/20 transition-all duration-500">
               <h3 className="text-2xl font-bold text-foreground mb-6">Send a Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">

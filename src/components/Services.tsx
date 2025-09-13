@@ -70,13 +70,16 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20 section-gradient">
-      <div className="container mx-auto px-6">
+    <section id="services" className="py-20 bg-gradient-to-b from-muted/30 to-background relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-accent/10 to-primary/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-l from-primary/10 to-accent/10 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            My <span className="text-primary">Services</span>
+            My <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Services</span>
           </h2>
-          <div className="w-20 h-1 bg-accent mx-auto mb-4"></div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Specialized services focused on delivering high-quality software solutions tailored to your needs
           </p>
@@ -90,7 +93,7 @@ const Services = () => {
             return (
               <div 
                 key={index} 
-                className={`${colorClasses.bg} rounded-2xl p-8 shadow-soft hover:shadow-accent/20 transition-smooth group`}
+                className={`${colorClasses.bg} rounded-2xl p-8 shadow-soft hover:shadow-2xl transition-all duration-500 group backdrop-blur-sm border border-white/10`}
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className={`p-4 rounded-xl ${colorClasses.icon} group-hover:scale-110 transition-smooth`}>
@@ -127,7 +130,7 @@ const Services = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <div className="bg-card rounded-2xl p-8 shadow-soft max-w-2xl mx-auto">
+          <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl p-8 shadow-2xl max-w-2xl mx-auto backdrop-blur-sm border border-primary/20 hover:shadow-accent/20 transition-all duration-500">
             <h3 className="text-2xl font-bold text-foreground mb-4">
               Ready to start your project?
             </h3>
@@ -138,6 +141,7 @@ const Services = () => {
               variant="hero"
               size="lg"
               onClick={scrollToContact}
+              className="hover:scale-105 transition-transform"
             >
               Let's Work Together
             </Button>
