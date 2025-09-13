@@ -36,7 +36,7 @@ const Navigation = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
         ? 'bg-background/95 backdrop-blur-md shadow-soft' 
-        : 'bg-transparent'
+        : 'bg-black/20 backdrop-blur-md'
     }`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
@@ -65,7 +65,11 @@ const Navigation = () => {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-smooth"
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-smooth ${
+                    isScrolled 
+                      ? 'text-foreground hover:text-primary' 
+                      : 'text-white hover:text-accent'
+                  }`}
                 >
                   {item.label}
                 </a>
@@ -90,6 +94,7 @@ const Navigation = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className={isScrolled ? 'text-foreground' : 'text-white hover:text-accent'}
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />

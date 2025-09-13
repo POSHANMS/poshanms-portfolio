@@ -65,14 +65,17 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="skills" className="py-20 relative overflow-hidden" style={{background: 'linear-gradient(135deg, hsl(217 32% 17%) 0%, hsl(222 47% 11%) 50%, hsl(217 32% 17%) 100%)'}}>
+      {/* Background effects */}
+      <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-l from-primary/10 to-accent/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-r from-accent/10 to-primary/10 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            My <span className="text-primary">Skills</span>
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            My <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Skills</span>
           </h2>
-          <div className="w-20 h-1 bg-accent mx-auto mb-4"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-white/70 max-w-2xl mx-auto">
             A comprehensive toolkit built through academic learning and hands-on project experience
           </p>
         </div>
@@ -83,12 +86,12 @@ const Skills = () => {
             const Icon = category.icon;
             
             return (
-              <div key={index} className="bg-card rounded-xl p-6 shadow-soft hover:shadow-accent/20 transition-smooth">
+              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-soft hover:shadow-2xl transition-all duration-500 border border-white/20">
                 <div className="flex items-center gap-3 mb-6">
                   <div className={`p-3 rounded-lg ${colorClasses.icon}`}>
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-foreground">{category.title}</h3>
+                  <h3 className="text-lg font-bold text-white">{category.title}</h3>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
@@ -108,7 +111,7 @@ const Skills = () => {
 
         {/* Additional Technologies */}
         <div className="mt-16">
-          <h3 className="text-2xl font-bold text-center text-foreground mb-8">Additional Technologies / Interests</h3>
+          <h3 className="text-2xl font-bold text-center text-white mb-8">Additional Technologies / Interests</h3>
           <div className="flex flex-wrap justify-center gap-3">
             {[
               "Machine Learning", "Deep Learning", "AI Development", "Cybersecurity",
@@ -116,7 +119,7 @@ const Skills = () => {
             ].map((tech, index) => (
               <span 
                 key={index}
-                className="px-4 py-2 bg-muted text-muted-foreground rounded-full text-sm hover:bg-primary hover:text-primary-foreground transition-smooth cursor-default"
+                className="px-4 py-2 bg-white/10 text-white/80 rounded-full text-sm hover:bg-primary hover:text-primary-foreground transition-smooth cursor-default backdrop-blur-sm border border-white/20"
               >
                 {tech}
               </span>

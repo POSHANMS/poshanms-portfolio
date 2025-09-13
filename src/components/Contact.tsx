@@ -72,7 +72,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-t from-muted/30 to-background relative overflow-hidden">
+    <section id="contact" className="py-20 relative overflow-hidden" style={{background: 'linear-gradient(135deg, hsl(217 32% 17%) 0%, hsl(222 47% 11%) 50%, hsl(217 32% 17%) 100%)'}}>
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5"></div>
       <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl"></div>
@@ -80,10 +80,10 @@ const Contact = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Let's <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Connect</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-white/70 max-w-2xl mx-auto">
             I'm always excited to discuss new opportunities, collaborate on projects, or just have a friendly chat about technology
           </p>
         </div>
@@ -93,8 +93,8 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-foreground mb-6">Get In Touch</h3>
-                <p className="text-muted-foreground leading-relaxed mb-8">
+                <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
+                <p className="text-white/80 leading-relaxed mb-8">
                   Whether you have a project in mind, want to discuss potential opportunities, 
                   or simply want to connect, I'd love to hear from you. Feel free to reach out 
                   through any of the channels below.
@@ -119,7 +119,7 @@ const Contact = () => {
                         <Icon className="w-5 h-5" />
                       </div>
                       <div>
-                        <div className="font-semibold text-foreground">{info.label}</div>
+                        <div className="font-semibold text-white">{info.label}</div>
                         <div className={`text-sm ${colorClasses.text}`}>{info.value}</div>
                       </div>
                     </a>
@@ -128,27 +128,27 @@ const Contact = () => {
               </div>
 
               {/* Location */}
-              <div className="bg-card rounded-xl p-6 shadow-soft">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-soft border border-white/20">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="p-3 bg-success/10 rounded-lg">
+                  <div className="p-3 bg-success/20 rounded-lg">
                     <MapPin className="w-5 h-5 text-success" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground">Location</h4>
-                    <p className="text-muted-foreground">Navkis College of Engineering</p>
+                    <h4 className="font-semibold text-white">Location</h4>
+                    <p className="text-white/70">Navkis College of Engineering</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Contact Form */}
-            <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white/10 hover:shadow-accent/20 transition-all duration-500">
-              <h3 className="text-2xl font-bold text-foreground mb-6">Send a Message</h3>
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-white/20 hover:shadow-accent/20 transition-all duration-500">
+              <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
                       Your Name
                     </label>
                     <input
@@ -157,13 +157,13 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full p-3 border border-input rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth"
+                      className="w-full p-3 border border-white/30 rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth backdrop-blur-sm"
                       placeholder="John Doe"
                       required
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
                       Email Address
                     </label>
                     <input
@@ -172,7 +172,7 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full p-3 border border-input rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth"
+                      className="w-full p-3 border border-white/30 rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth backdrop-blur-sm"
                       placeholder="john@example.com"
                       required
                     />
@@ -180,7 +180,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-white mb-2">
                     Subject
                   </label>
                   <input
@@ -189,14 +189,14 @@ const Contact = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="w-full p-3 border border-input rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth"
+                    className="w-full p-3 border border-white/30 rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth backdrop-blur-sm"
                     placeholder="Project Discussion"
                     required
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
                     Message
                   </label>
                   <textarea
@@ -205,7 +205,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={5}
-                    className="w-full p-3 border border-input rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth resize-none"
+                    className="w-full p-3 border border-white/30 rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth resize-none backdrop-blur-sm"
                     placeholder="Tell me about your project or just say hello!"
                     required
                   />
@@ -228,10 +228,10 @@ const Contact = () => {
         {/* Final CTA */}
         <div className="text-center mt-16">
           <div className="max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
+            <h3 className="text-2xl font-bold text-white mb-4">
               Let's Build Something Amazing Together
             </h3>
-            <p className="text-muted-foreground">
+            <p className="text-white/70">
               I'm currently available for freelance projects and open to discussing full-time opportunities. 
               Let's connect and explore how we can work together!
             </p>
