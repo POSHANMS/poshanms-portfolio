@@ -77,10 +77,10 @@ const Services = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             My <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Services</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Specialized services focused on delivering high-quality software solutions tailored to your needs
           </p>
         </div>
@@ -99,10 +99,10 @@ const Services = () => {
                   <div className={`p-4 rounded-xl ${colorClasses.icon} group-hover:scale-110 transition-smooth`}>
                     <Icon className="w-8 h-8" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground">{service.title}</h3>
+                  <h3 className="text-xl font-bold text-white">{service.title}</h3>
                 </div>
 
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-gray-300 mb-6 leading-relaxed">
                   {service.description}
                 </p>
 
@@ -110,7 +110,7 @@ const Services = () => {
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center gap-3">
                       <div className={`w-2 h-2 rounded-full ${colorClasses.icon}`}></div>
-                      <span className="text-sm text-foreground">{feature}</span>
+                      <span className="text-sm text-gray-200">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -131,10 +131,10 @@ const Services = () => {
         {/* Call to Action */}
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl p-8 shadow-2xl max-w-2xl mx-auto backdrop-blur-sm border border-primary/20 hover:shadow-accent/20 transition-all duration-500">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
+            <h3 className="text-2xl font-bold text-white mb-4">
               Ready to start your project?
             </h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-gray-300 mb-6">
               Let's discuss how I can help bring your ideas to life with clean, efficient code and innovative solutions.
             </p>
             <Button 
