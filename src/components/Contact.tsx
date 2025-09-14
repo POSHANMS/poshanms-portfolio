@@ -111,7 +111,7 @@ const Contact = () => {
                     <a
                       key={index}
                       href={info.href}
-                      className="flex items-center gap-4 p-4 bg-card/80 backdrop-blur-sm rounded-xl shadow-soft hover:shadow-2xl transition-all duration-300 group border border-white/10"
+                      className="flex items-center gap-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl shadow-soft hover:shadow-2xl transition-all duration-300 group border border-white/10"
                       target={info.href.startsWith('http') ? '_blank' : '_self'}
                       rel={info.href.startsWith('http') ? 'noopener noreferrer' : ''}
                     >
