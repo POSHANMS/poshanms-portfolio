@@ -48,8 +48,8 @@ const Hero = () => {
                 <div className="bg-white/10 rounded-xl p-6 backdrop-blur-md border border-white/20">
                   <h3 className="text-lg font-semibold text-white mb-2">Education</h3>
                   <p className="text-white/80">
-                    B.Tech, Computer Science & Engineering — Navkis College of Engineering<br />
-                    4th year (7th semester) — <span className="text-accent font-semibold">CGPA: 7.88</span>
+                    B.E, Computer Science & Engineering — Navkis College of Engineering<br />
+                    4th year (7th semester) — CGPA: 7.88
                   </p>
                 </div>
 
