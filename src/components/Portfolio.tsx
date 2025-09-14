@@ -174,9 +174,8 @@ const Portfolio = () => {
               I'm constantly working on new projects and exploring emerging technologies. Stay tuned for more innovative solutions!
             </p>
             <Button 
-              variant="outline"
+              className="bg-white/20 text-white border border-white/30 hover:bg-white/30 hover:text-white"
               onClick={() => window.open('#', '_blank')}
-              className="border-white/30 text-white hover:bg-white/10 hover:text-white"
             >
               <Github className="w-4 h-4 mr-2" />
               View All on GitHub

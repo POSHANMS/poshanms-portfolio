@@ -95,7 +95,7 @@ const Hero = () => {
                 <Button size="lg" className="hero-gradient text-white border-0 hover:opacity-90 transition-smooth shadow-accent hover:shadow-2xl" onClick={() => scrollToSection('portfolio')}>
                   View My Work
                 </Button>
-                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 hover:text-white transition-smooth backdrop-blur-sm" onClick={() => scrollToSection('contact')}>
+                <Button size="lg" className="bg-white/20 text-white border border-white/30 hover:bg-white/30 hover:text-white transition-smooth backdrop-blur-sm" onClick={() => scrollToSection('contact')}>
                   Get In Touch
                 </Button>
               </div>
