@@ -70,7 +70,7 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-b from-muted/30 to-background relative overflow-hidden">
+    <section id="services" className="py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-accent/10 to-primary/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-l from-primary/10 to-accent/10 rounded-full blur-3xl"></div>
