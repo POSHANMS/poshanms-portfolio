@@ -114,6 +114,10 @@ const Hero = () => {
                   <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
                   <span>Full Stack Developer</span>
                 </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                  <span>Software Engineer</span>
+                </div>
               </div>
             </div>
           </div>
