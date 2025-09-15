@@ -98,6 +98,13 @@ const Hero = () => {
                 <Button size="lg" className="bg-white/20 text-white border border-white/30 hover:bg-white/30 hover:text-white transition-smooth backdrop-blur-sm" onClick={() => scrollToSection('contact')}>
                   Get In Touch
                 </Button>
+                <Button 
+                  size="lg" 
+                  className="bg-primary/20 text-white border border-primary/30 hover:bg-primary/30 hover:text-white transition-smooth backdrop-blur-sm" 
+                  onClick={() => window.open('https://drive.google.com/uc?export=download&id=1w5XM0gaSJsGVq4a2YE88k0t8q5RWWI9B', '_blank')}
+                >
+                  Download Resume
+                </Button>
               </div>
 
               {/* Quick Stats */}

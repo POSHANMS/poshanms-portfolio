@@ -6,36 +6,36 @@ const Services = () => {
     {
       icon: Globe,
       title: "Web Development",
-      description: "Creating responsive and user-friendly websites using HTML, CSS, and JavaScript with modern frameworks and best practices.",
+      description: "Passionate about creating modern, responsive web applications using HTML, CSS, JavaScript, and React.js with clean, maintainable code.",
       features: [
-        "Responsive Design",
-        "Modern UI/UX", 
-        "Performance Optimization",
-        "Cross-browser Compatibility"
+        "Frontend Development",
+        "React.js Applications", 
+        "REST API Integration",
+        "Responsive UI Design"
       ],
       color: "primary"
     },
     {
       icon: Code,
-      title: "Software Solutions", 
-      description: "Developing applications to solve real-world problems using C, C++, Java, or Python with focus on scalability and efficiency.",
+      title: "Problem Solving & Algorithms", 
+      description: "Enthusiastic about tackling complex programming challenges, designing efficient algorithms, and solving computational problems.",
       features: [
-        "Custom Applications",
-        "Problem-solving Focus",
-        "Scalable Architecture", 
-        "Code Quality"
+        "Data Structures",
+        "Algorithm Design",
+        "Competitive Programming",
+        "Code Optimization"
       ],
       color: "accent"
     },
     {
       icon: Cpu,
-      title: "Full Stack Development",
-      description: "Designing, developing, and maintaining complete applications from database to user interface with modern technology stack.",
+      title: "Cybersecurity & System Security",
+      description: "Interested in cybersecurity principles, system security, and understanding how to build secure, reliable software systems.",
       features: [
-        "Database Design",
-        "API Development",
-        "Frontend Integration",
-        "System Maintenance"
+        "Security Best Practices",
+        "System Analysis",
+        "Vulnerability Assessment",
+        "Secure Development"
       ],
       color: "success"
     }
@@ -70,7 +70,7 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-br from-gray-900 via-gray-900 to-black relative overflow-hidden">
+    <section id="areas-of-interest" className="py-20 bg-gradient-to-br from-gray-900 via-gray-900 to-black relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-accent/10 to-primary/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-l from-primary/10 to-accent/10 rounded-full blur-3xl"></div>
@@ -78,10 +78,10 @@ const Services = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            My <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Services</span>
+            My <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Areas of Interest</span>
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Specialized services focused on delivering high-quality software solutions tailored to your needs
+            Key areas where I'm passionate about learning, growing, and contributing to innovative solutions
           </p>
         </div>
 

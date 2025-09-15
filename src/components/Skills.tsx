@@ -11,31 +11,31 @@ const Skills = () => {
     {
       title: "Web Development", 
       icon: Globe,
-      skills: ["HTML/CSS", "JavaScript", "basic front-end frameworks"],
+      skills: ["HTML", "CSS", "JavaScript", "React.js (basic)", "REST APIs"],
       color: "accent"
     },
     {
       title: "Databases",
       icon: Database,
-      skills: ["MySQL", "MongoDB (basic CRUD)"],
+      skills: ["MySQL", "MongoDB"],
       color: "success"
     },
     {
       title: "Tools & Platforms",
       icon: Terminal,
-      skills: ["Git/GitHub", "Visual Studio Code", "basic Linux commands"],
+      skills: ["Git/GitHub", "Visual Studio Code", "Linux"],
       color: "primary"
     },
     {
       title: "Software Development",
       icon: Cpu,
-      skills: ["Object-oriented programming", "problem-solving", "algorithm design"],
+      skills: ["Object-Oriented Programming", "Problem-Solving", "Algorithm Design"],
       color: "accent"
     },
     {
       title: "Data Visualization",
       icon: Wrench,
-      skills: ["Matplotlib (Python)", "Pandas"],
+      skills: ["Matplotlib", "Pandas"],
       color: "success"
     }
   ];
