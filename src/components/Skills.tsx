@@ -1,4 +1,4 @@
-import { Code, Database, Globe, Cpu, Terminal, Wrench, Shield, Users } from "lucide-react";
+import { Code, Database, Globe, Cpu, Terminal, Wrench, Lock, UserCheck } from "lucide-react";
 
 const Skills = () => {
   const skillCategories = [
@@ -34,7 +34,7 @@ const Skills = () => {
     },
     {
       title: "Cybersecurity & Emerging Tech",
-      icon: Shield,
+      icon: Lock,
       skills: ["Cybersecurity Fundamentals (TryHackMe labs)", "Networking Basics", "AI/ML (Python, ML/DL basics)"],
       color: "success"
     },
@@ -46,7 +46,7 @@ const Skills = () => {
     },
     {
       title: "Soft Skills",
-      icon: Users,
+      icon: UserCheck,
       skills: ["Team Collaboration", "Documentation", "Communication"],
       color: "accent"
     }
