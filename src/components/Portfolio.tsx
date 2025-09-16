@@ -28,7 +28,7 @@ const Portfolio = () => {
       title: "Hostel Management System",
       description: "Comprehensive web-based application managing hostel operations including student registration, room allocation, and fee tracking.",
       longDescription: "A full-stack web application designed to streamline hostel management operations. Features an admin dashboard with complete CRUD operations and robust database integration for efficient management.",
-      tech: ["Java", "MySQL", "HTML", "CSS", "JavaScript", "Web Development"],
+      tech: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "Web Development"],
       icon: Building2,
       color: "accent", 
       features: [
