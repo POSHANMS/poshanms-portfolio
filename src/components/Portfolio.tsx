@@ -1,10 +1,30 @@
-import { ExternalLink, Github, Brain, Building2 } from "lucide-react";
+import { ExternalLink, Github, Brain, Building2, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Portfolio = () => {
   const projects = [
     {
       id: 1,
+      title: "Personal Portfolio Website",
+      description: "Modern, responsive portfolio website showcasing my skills, projects, and professional journey with elegant animations.",
+      longDescription: "A comprehensive personal portfolio built with modern web technologies, featuring smooth animations, responsive design, and interactive sections. Showcases professional skills, projects, and achievements with an elegant dark theme and seamless user experience.",
+      tech: ["React", "TypeScript", "Tailwind CSS", "Vite", "Lucide Icons", "Responsive Design"],
+      icon: User,
+      color: "success",
+      features: [
+        "Modern responsive design with dark theme",
+        "Smooth scroll animations and transitions", 
+        "Interactive skills and project sections",
+        "Contact form with email integration",
+        "SEO optimized with semantic HTML",
+        "Mobile-first responsive layout"
+      ],
+      github: "#",
+      demo: "#",
+      image: "portfolio"
+    },
+    {
+      id: 2,
       title: "HealthGPT",
       description: "AI-powered healthcare assistant answering medical queries and tracking symptoms with advanced machine learning capabilities.",
       longDescription: "A comprehensive healthcare AI assistant that leverages OpenAI's API to provide intelligent medical query responses. Features secure data storage, user authentication, and an intuitive chatbot interface for seamless patient interaction.",
@@ -24,7 +44,7 @@ const Portfolio = () => {
       image: "healthgpt"
     },
     {
-      id: 2,
+      id: 3,
       title: "Hostel Management System",
       description: "Comprehensive web-based application managing hostel operations including student registration, room allocation, and fee tracking.",
       longDescription: "A full-stack web application designed to streamline hostel management operations. Features an admin dashboard with complete CRUD operations and robust database integration for efficient management.",
@@ -58,6 +78,12 @@ const Portfolio = () => {
         icon: "bg-accent text-accent-foreground",
         text: "text-accent", 
         border: "border-accent/20"
+      },
+      success: {
+        bg: "bg-success/5",
+        icon: "bg-success text-success-foreground",
+        text: "text-success", 
+        border: "border-success/20"
       }
     };
     return colors[color as keyof typeof colors] || colors.primary;
