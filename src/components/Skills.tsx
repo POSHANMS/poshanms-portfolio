@@ -1,11 +1,11 @@
-import { Code, Database, Globe, Cpu, Terminal, Wrench } from "lucide-react";
+import { Code, Database, Globe, Cpu, Terminal, Wrench, Shield, Users } from "lucide-react";
 
 const Skills = () => {
   const skillCategories = [
     {
       title: "Programming Languages",
       icon: Code,
-      skills: ["C", "Java", "Python"],
+      skills: ["Python", "C", "JAVA"],
       color: "primary"
     },
     {
@@ -17,26 +17,38 @@ const Skills = () => {
     {
       title: "Databases",
       icon: Database,
-      skills: ["MySQL", "MongoDB"],
+      skills: ["MySQL (basic)", "MongoDB (basic)"],
       color: "success"
     },
     {
       title: "Tools & Platforms",
       icon: Terminal,
-      skills: ["Git/GitHub", "Visual Studio Code", "Linux"],
+      skills: ["Git/GitHub", "Visual Studio Code", "Eclipse", "Linux"],
       color: "primary"
     },
     {
       title: "Software Development",
       icon: Cpu,
-      skills: ["Object-Oriented Programming", "Problem-Solving", "Algorithm Design"],
+      skills: ["Object-Oriented Programming (OOP)", "Data Structures & Algorithms (DSA)", "Problem-Solving", "CRUD Operations"],
       color: "accent"
+    },
+    {
+      title: "Cybersecurity & Emerging Tech",
+      icon: Shield,
+      skills: ["Cybersecurity Fundamentals (TryHackMe labs)", "Networking Basics", "AI/ML (Python, ML/DL basics)"],
+      color: "success"
     },
     {
       title: "Data Visualization",
       icon: Wrench,
       skills: ["Matplotlib", "Pandas"],
-      color: "success"
+      color: "primary"
+    },
+    {
+      title: "Soft Skills",
+      icon: Users,
+      skills: ["Team Collaboration", "Documentation", "Communication"],
+      color: "accent"
     }
   ];
 
