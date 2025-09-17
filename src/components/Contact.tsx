@@ -30,6 +30,9 @@ const Contact = () => {
     const templateId = 'template_zp974mm';
     const publicKey = 'P8DcirKuMU2WUK8xF';
 
+    // Initialize EmailJS with public key
+    emailjs.init(publicKey);
+
     try {
       // Basic input sanitization
       const sanitizedFormData = {
@@ -50,8 +53,7 @@ const Contact = () => {
       await emailjs.send(
         serviceId,
         templateId,
-        templateParams,
-        publicKey
+        templateParams
       );
 
       toast({
