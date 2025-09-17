@@ -25,20 +25,43 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Check if EmailJS credentials are configured
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      toast({
+        title: "Configuration Error",
+        description: "Email service is not properly configured. Please contact me directly via email.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
+      // Basic input sanitization
+      const sanitizedFormData = {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        subject: formData.subject.trim(),
+        message: formData.message.trim(),
+      };
+
       const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
+        from_name: sanitizedFormData.name,
+        from_email: sanitizedFormData.email,
+        subject: sanitizedFormData.subject,
+        message: sanitizedFormData.message,
         to_name: 'You',
       };
 
       await emailjs.send(
-        'service_5ji07vg',
-        'template_zp974mm',
+        serviceId,
+        templateId,
         templateParams,
-        'P8DcirKuMU2WUK8xF'
+        publicKey
       );
 
       toast({

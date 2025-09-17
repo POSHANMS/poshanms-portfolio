@@ -32,9 +32,35 @@ cd <YOUR_PROJECT_NAME>
 # Step 3: Install the necessary dependencies.
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Create environment variables file
+cp .env.example .env.local
+
+# Step 5: Configure your EmailJS credentials (see Environment Variables section below)
+# Edit .env.local and add your EmailJS service ID, template ID, and public key
+
+# Step 6: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
+
+## Environment Variables
+
+This project requires EmailJS configuration for the contact form to work. Create a `.env.local` file in the root directory and add the following variables:
+
+```env
+VITE_EMAILJS_SERVICE_ID=your_service_id_here
+VITE_EMAILJS_TEMPLATE_ID=your_template_id_here
+VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
+```
+
+### How to get EmailJS credentials:
+
+1. Sign up at [EmailJS](https://www.emailjs.com/)
+2. Create a new email service
+3. Create an email template
+4. Get your Service ID, Template ID, and Public Key from the EmailJS dashboard
+5. Add these values to your `.env.local` file
+
+**Note**: The contact form will show an error message if these credentials are not configured.
 
 **Edit a file directly in GitHub**
 
