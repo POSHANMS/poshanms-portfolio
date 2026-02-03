@@ -19,7 +19,7 @@ const Hero = () => {
           <div className="flex-shrink-0">
             <div className="relative">
               <div className="w-80 h-80 rounded-full hero-gradient p-1 shadow-2xl backdrop-blur-sm">
-                <img src={profilePicture} alt="Poshan M S - Computer Science Student" className="w-full h-full rounded-full object-cover" />
+                <img src={profilePicture} alt="Poshan M S - Computer Science Student" className="w-full h-full rounded-full object-cover object-[center_20%]" />
               </div>
               {/* Floating elements for visual interest */}
               <div className="absolute -top-4 -right-4 w-12 h-12 bg-accent rounded-full shadow-accent/50 animate-pulse"></div>
