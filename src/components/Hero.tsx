@@ -49,7 +49,7 @@ const Hero = () => {
                   <h3 className="text-lg font-semibold text-white mb-2">Education</h3>
                   <p className="text-white/80">
                     B.E, Computer Science & Engineering — Navkis College of Engineering<br />
-                    4th year (7th semester) — CGPA: 7.88
+                    4th year (8th semester) — CGPA: 7.88
                   </p>
                 </div>
 
@@ -57,7 +57,7 @@ const Hero = () => {
                 <div className="bg-white/10 rounded-xl p-6 backdrop-blur-md border border-white/20">
                   <h3 className="text-lg font-semibold text-white mb-4">Connect & Profiles</h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                    <a href="https://www.linkedin.com/in/poshan-ms-457200382" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-smooth group">
+                    <a href="https://www.linkedin.com/in/poshanms/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-smooth group">
                       <div className="w-8 h-8 bg-[#0077B5] rounded flex items-center justify-center">
                         <span className="text-white text-xs font-bold">in</span>
                       </div>
@@ -101,7 +101,7 @@ const Hero = () => {
                 <Button 
                   size="lg" 
                   className="bg-primary/20 text-white border border-primary/30 hover:bg-primary/30 hover:text-white transition-smooth backdrop-blur-sm" 
-                  onClick={() => window.open('https://drive.google.com/uc?export=download&id=1Dgf_vapIBIFyEfjPOiwfcAQFsRZwFtPq', '_blank')}
+                  onClick={() => window.open('https://drive.google.com/file/d/13Jdc_zSQwzl5N7UcRtLMRkUwtL-PKTuJ/view?usp=sharing', '_blank')}
                 >
                   Download Resume
                 </Button>
@@ -115,7 +115,7 @@ const Hero = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                  <span>7th Semester</span>
+                  <span>8th Semester</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>

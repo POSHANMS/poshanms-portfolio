@@ -7,7 +7,7 @@ const Footer = () => {
     label: "Email"
   }, {
     icon: Linkedin,
-    href: "https://linkedin.com/in/poshanms",
+    href: "https://www.linkedin.com/in/poshanms/",
     label: "LinkedIn"
   }, {
     icon: Github,

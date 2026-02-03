@@ -39,7 +39,7 @@ const Portfolio = () => {
         "Intuitive chatbot interface",
         "Integration with OpenAI API"
       ],
-      github: "#",
+      github: "https://github.com/POSHANMS/HealthGPT---Intelligent-Healthcare-System",
       demo: "#",
       image: "healthgpt"
     },
