@@ -97,8 +97,8 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/poshan-ms-457200382",
-      href: "https://www.linkedin.com/in/poshan-ms-457200382",
+      value: "linkedin.com/in/poshanms",
+      href: "https://www.linkedin.com/in/poshanms/",
       color: "primary"
     },
     {
