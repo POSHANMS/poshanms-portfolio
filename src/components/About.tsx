@@ -1,8 +1,8 @@
 import { GraduationCap, Target, Code, Heart } from "lucide-react";
-
 const About = () => {
-  return (
-    <section id="about" className="py-20 relative overflow-hidden" style={{background: 'linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(217 32% 17%) 50%, hsl(222 47% 11%) 100%)'}}>
+  return <section id="about" className="py-20 relative overflow-hidden" style={{
+    background: 'linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(217 32% 17%) 50%, hsl(222 47% 11%) 100%)'
+  }}>
       {/* Background effects */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-primary/10 to-transparent rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-accent/10 to-transparent rounded-full blur-3xl"></div>
@@ -80,7 +80,7 @@ const About = () => {
                 <div className="space-y-3">
                   <div>
                     <h4 className="font-semibold text-white">Computer Science and Engineering</h4>
-                    <p className="text-white/70">4th Year (7th Semester)</p>
+                    <p className="text-white/70">4th Year (8th Semester)</p>
                     <p className="text-primary font-medium">Navkis College of Engineering</p>
                     <p className="text-accent font-bold">CGPA: 7.88</p>
                   </div>
@@ -101,8 +101,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
