@@ -13,16 +13,64 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<{ [k: string]: string }>({});
+  const [touched, setTouched] = useState<{ [k: string]: boolean }>({});
+
+  const validateField = (name: string, value: string) => {
+    const v = value.trim();
+    switch (name) {
+      case 'name':
+        if (!v) return 'Please enter your name';
+        if (v.length < 2) return 'Name is too short';
+        return '';
+      case 'email':
+        if (!v) return 'Email is required';
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return 'Enter a valid email address';
+        return '';
+      case 'subject':
+        if (!v) return 'Subject is required';
+        return '';
+      case 'message':
+        if (!v) return 'Message cannot be empty';
+        if (v.length < 10) return 'Tell me a bit more (10+ characters)';
+        return '';
+      default:
+        return '';
+    }
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (touched[name]) {
+      setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
+    }
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setTouched((prev) => ({ ...prev, [name]: true }));
+    setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Validate everything on submit
+    const newErrors: { [k: string]: string } = {};
+    (Object.keys(formData) as Array<keyof typeof formData>).forEach((k) => {
+      const err = validateField(k, formData[k]);
+      if (err) newErrors[k] = err;
+    });
+    setTouched({ name: true, email: true, subject: true, message: true });
+    setErrors(newErrors);
+    if (Object.keys(newErrors).length > 0) {
+      toast({
+        title: "Please fix the highlighted fields",
+        description: "Some inputs need your attention before sending.",
+        variant: "destructive",
+      });
+      return;
+    }
     setIsSubmitting(true);
 
     // EmailJS configuration - these are public credentials safe for client-side use
