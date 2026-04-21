@@ -13,16 +13,64 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<{ [k: string]: string }>({});
+  const [touched, setTouched] = useState<{ [k: string]: boolean }>({});
+
+  const validateField = (name: string, value: string) => {
+    const v = value.trim();
+    switch (name) {
+      case 'name':
+        if (!v) return 'Please enter your name';
+        if (v.length < 2) return 'Name is too short';
+        return '';
+      case 'email':
+        if (!v) return 'Email is required';
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return 'Enter a valid email address';
+        return '';
+      case 'subject':
+        if (!v) return 'Subject is required';
+        return '';
+      case 'message':
+        if (!v) return 'Message cannot be empty';
+        if (v.length < 10) return 'Tell me a bit more (10+ characters)';
+        return '';
+      default:
+        return '';
+    }
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (touched[name]) {
+      setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
+    }
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setTouched((prev) => ({ ...prev, [name]: true }));
+    setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Validate everything on submit
+    const newErrors: { [k: string]: string } = {};
+    (Object.keys(formData) as Array<keyof typeof formData>).forEach((k) => {
+      const err = validateField(k, formData[k]);
+      if (err) newErrors[k] = err;
+    });
+    setTouched({ name: true, email: true, subject: true, message: true });
+    setErrors(newErrors);
+    if (Object.keys(newErrors).length > 0) {
+      toast({
+        title: "Please fix the highlighted fields",
+        description: "Some inputs need your attention before sending.",
+        variant: "destructive",
+      });
+      return;
+    }
     setIsSubmitting(true);
 
     // EmailJS configuration - these are public credentials safe for client-side use
@@ -203,67 +251,51 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
-                      Your Name
-                    </label>
+                    <label htmlFor="name" className="block text-sm font-medium text-white mb-2">Your Name</label>
                     <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="w-full p-3 border border-white/30 rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth backdrop-blur-sm"
+                      type="text" id="name" name="name"
+                      value={formData.name} onChange={handleInputChange} onBlur={handleBlur}
+                      aria-invalid={!!errors.name}
+                      className={`w-full p-3 border rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:border-transparent transition-smooth backdrop-blur-sm ${errors.name ? 'border-destructive focus:ring-destructive' : 'border-white/30 focus:ring-primary'}`}
                       placeholder="John Doe"
-                      required
                     />
+                    {errors.name && <p className="mt-1 text-xs text-destructive animate-fade-in">{errors.name}</p>}
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
-                      Email Address
-                    </label>
+                    <label htmlFor="email" className="block text-sm font-medium text-white mb-2">Email Address</label>
                     <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="w-full p-3 border border-white/30 rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth backdrop-blur-sm"
+                      type="email" id="email" name="email"
+                      value={formData.email} onChange={handleInputChange} onBlur={handleBlur}
+                      aria-invalid={!!errors.email}
+                      className={`w-full p-3 border rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:border-transparent transition-smooth backdrop-blur-sm ${errors.email ? 'border-destructive focus:ring-destructive' : 'border-white/30 focus:ring-primary'}`}
                       placeholder="john@example.com"
-                      required
                     />
+                    {errors.email && <p className="mt-1 text-xs text-destructive animate-fade-in">{errors.email}</p>}
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-white mb-2">
-                    Subject
-                  </label>
+                  <label htmlFor="subject" className="block text-sm font-medium text-white mb-2">Subject</label>
                   <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    className="w-full p-3 border border-white/30 rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth backdrop-blur-sm"
+                    type="text" id="subject" name="subject"
+                    value={formData.subject} onChange={handleInputChange} onBlur={handleBlur}
+                    aria-invalid={!!errors.subject}
+                    className={`w-full p-3 border rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:border-transparent transition-smooth backdrop-blur-sm ${errors.subject ? 'border-destructive focus:ring-destructive' : 'border-white/30 focus:ring-primary'}`}
                     placeholder="Project Discussion"
-                    required
                   />
+                  {errors.subject && <p className="mt-1 text-xs text-destructive animate-fade-in">{errors.subject}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
-                    Message
-                  </label>
+                  <label htmlFor="message" className="block text-sm font-medium text-white mb-2">Message</label>
                   <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows={5}
-                    className="w-full p-3 border border-white/30 rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth resize-none backdrop-blur-sm"
+                    id="message" name="message" rows={5}
+                    value={formData.message} onChange={handleInputChange} onBlur={handleBlur}
+                    aria-invalid={!!errors.message}
+                    className={`w-full p-3 border rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:border-transparent transition-smooth resize-none backdrop-blur-sm ${errors.message ? 'border-destructive focus:ring-destructive' : 'border-white/30 focus:ring-primary'}`}
                     placeholder="Tell me about your project or just say hello!"
-                    required
                   />
+                  {errors.message && <p className="mt-1 text-xs text-destructive animate-fade-in">{errors.message}</p>}
                 </div>
 
                 <Button 

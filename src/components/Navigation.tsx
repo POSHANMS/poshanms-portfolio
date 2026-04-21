@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
@@ -34,9 +33,9 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-background/95 backdrop-blur-md shadow-soft' 
-        : 'bg-black/20 backdrop-blur-md'
+      isScrolled
+        ? 'bg-background/80 backdrop-blur-xl border-b border-primary/20 shadow-[0_4px_30px_-10px_hsl(var(--primary)/0.4)]'
+        : 'bg-background/30 backdrop-blur-md'
     }`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
@@ -48,7 +47,7 @@ const Navigation = () => {
                 e.preventDefault();
                 scrollToSection("#home");
               }}
-              className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+              className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent hover:drop-shadow-[0_0_12px_hsl(var(--primary)/0.6)] transition-all"
             >
               Poshan M S
             </a>
@@ -65,11 +64,7 @@ const Navigation = () => {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-smooth ${
-                    isScrolled 
-                      ? 'text-foreground hover:text-primary' 
-                      : 'text-white hover:text-accent'
-                  }`}
+                  className="story-link px-1 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
                 >
                   {item.label}
                 </a>
@@ -88,53 +83,55 @@ const Navigation = () => {
             </Button>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Animated hamburger button */}
           <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
+            <button
+              aria-label="Toggle menu"
+              aria-expanded={isMenuOpen}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={isScrolled ? 'text-foreground' : 'text-white hover:text-accent'}
+              className="relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 group"
             >
-              {isMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </Button>
+              <span className={`block h-0.5 w-6 bg-foreground rounded-full transition-all duration-300 group-hover:bg-primary ${isMenuOpen ? 'translate-y-2 rotate-45 bg-primary shadow-[0_0_8px_hsl(var(--primary))]' : ''}`} />
+              <span className={`block h-0.5 w-6 bg-foreground rounded-full transition-all duration-300 group-hover:bg-primary ${isMenuOpen ? 'opacity-0' : ''}`} />
+              <span className={`block h-0.5 w-6 bg-foreground rounded-full transition-all duration-300 group-hover:bg-primary ${isMenuOpen ? '-translate-y-2 -rotate-45 bg-primary shadow-[0_0_8px_hsl(var(--primary))]' : ''}`} />
+            </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-background/95 backdrop-blur-md rounded-lg mt-2 shadow-soft">
-              {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(item.href);
-                  }}
-                  className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium transition-smooth"
-                >
-                  {item.label}
-                </a>
-              ))}
-              <div className="pt-2">
-                <Button
-                  variant="hero"
-                  size="sm"
-                  className="w-full"
-                  onClick={() => scrollToSection("#contact")}
-                >
-                  Hire Me
-                </Button>
-              </div>
-            </div>
+        {/* Mobile fullscreen overlay */}
+        <div
+          className={`md:hidden fixed inset-x-0 top-16 bottom-0 bg-background/95 backdrop-blur-2xl transition-all duration-500 ${
+            isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
+        >
+          <div className="absolute inset-0 bg-grid-neon opacity-30" />
+          <div className="relative h-full flex flex-col items-center justify-center gap-6 px-6">
+            {navItems.map((item, idx) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.href);
+                }}
+                style={{ transitionDelay: isMenuOpen ? `${idx * 60}ms` : '0ms' }}
+                className={`text-2xl font-semibold text-foreground/90 hover:text-neon transition-all duration-500 ${
+                  isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                }`}
+              >
+                {item.label}
+              </a>
+            ))}
+            <Button
+              variant="hero"
+              size="lg"
+              className="btn-magnetic mt-4"
+              onClick={() => scrollToSection("#contact")}
+            >
+              Hire Me
+            </Button>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

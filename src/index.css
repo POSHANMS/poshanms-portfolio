@@ -6,56 +6,51 @@
 
 @layer base {
   :root {
-    /* Base colors */
-    --background: 0 0% 98%;
-    --foreground: 215 25% 15%;
+    /* === Dark Neon Aesthetic === */
+    --background: 230 35% 5%;
+    --foreground: 210 40% 98%;
 
-    /* Card system */
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card: 230 30% 8%;
+    --card-foreground: 210 40% 98%;
 
-    /* Popover system */
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover: 230 30% 8%;
+    --popover-foreground: 210 40% 98%;
 
-    /* Primary brand colors - Professional blue */
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 217 91% 55%;
+    /* Neon cyan primary */
+    --primary: 187 100% 55%;
+    --primary-foreground: 230 35% 5%;
+    --primary-hover: 187 100% 65%;
 
-    /* Secondary colors - Soft neutral */
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 215 25% 25%;
+    --secondary: 230 25% 12%;
+    --secondary-foreground: 210 40% 98%;
 
-    /* Muted colors */
-    --muted: 210 20% 96%;
-    --muted-foreground: 215 15% 50%;
+    --muted: 230 25% 14%;
+    --muted-foreground: 215 20% 70%;
 
-    /* Accent colors - Golden yellow from inspiration */
-    --accent: 45 100% 65%;
-    --accent-foreground: 215 25% 15%;
-    --accent-hover: 45 100% 60%;
+    /* Neon magenta accent */
+    --accent: 300 100% 65%;
+    --accent-foreground: 230 35% 5%;
+    --accent-hover: 300 100% 72%;
 
-    /* Status colors */
-    --destructive: 0 84% 60%;
+    --destructive: 0 90% 62%;
     --destructive-foreground: 0 0% 100%;
-    --success: 142 76% 36%;
-    --success-foreground: 0 0% 100%;
+    --success: 152 90% 55%;
+    --success-foreground: 230 35% 5%;
 
-    /* Border and input */
-    --border: 220 13% 91%;
-    --ring: 217 91% 60%;
+    --border: 230 25% 18%;
+    --input: 230 25% 14%;
+    --ring: 187 100% 55%;
 
-    /* Portfolio specific design tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(45 100% 65%) 100%);
-    --hero-bg: linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(217 32% 17%) 50%, hsl(222 47% 11%) 100%);
-    --section-gradient: linear-gradient(to bottom, hsl(0 0% 98%) 0%, hsl(210 20% 96%) 100%);
-    --glass-bg: rgba(255, 255, 255, 0.1);
-    --glass-border: rgba(255, 255, 255, 0.2);
-    
-    /* Spacing and shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(217 91% 60% / 0.1);
-    --shadow-accent: 0 8px 30px -8px hsl(45 100% 65% / 0.3);
+    /* Neon design tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(187 100% 55%) 0%, hsl(300 100% 65%) 100%);
+    --hero-bg: radial-gradient(ellipse at top, hsl(230 40% 10%) 0%, hsl(230 35% 5%) 60%, hsl(230 40% 3%) 100%);
+    --section-gradient: linear-gradient(to bottom, hsl(230 35% 5%) 0%, hsl(230 30% 7%) 100%);
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(255, 255, 255, 0.08);
+
+    --shadow-soft: 0 4px 30px -8px hsl(187 100% 55% / 0.25);
+    --shadow-accent: 0 8px 40px -8px hsl(300 100% 65% / 0.45);
+    --shadow-neon: 0 0 30px hsl(187 100% 55% / 0.5), 0 0 60px hsl(300 100% 65% / 0.25);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 1rem;
@@ -149,6 +144,51 @@
 
   .transition-smooth {
     transition: var(--transition-smooth);
+  }
+}
+
+/* === Neon utilities === */
+@layer utilities {
+  .text-neon {
+    color: hsl(var(--primary));
+    text-shadow: 0 0 8px hsl(var(--primary) / 0.7), 0 0 24px hsl(var(--primary) / 0.4);
+  }
+  .text-neon-accent {
+    color: hsl(var(--accent));
+    text-shadow: 0 0 8px hsl(var(--accent) / 0.7), 0 0 24px hsl(var(--accent) / 0.4);
+  }
+  .border-neon {
+    border-color: hsl(var(--primary) / 0.5);
+    box-shadow: 0 0 12px hsl(var(--primary) / 0.25), inset 0 0 12px hsl(var(--primary) / 0.08);
+  }
+  .shadow-neon {
+    box-shadow: var(--shadow-neon);
+  }
+  .bg-grid-neon {
+    background-image:
+      linear-gradient(hsl(var(--primary) / 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(hsl(var(--primary) / 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .typing-caret::after {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: hsl(var(--accent));
+    margin-left: 4px;
+    vertical-align: text-bottom;
+    animation: caret-blink 1s steps(1) infinite;
+    box-shadow: 0 0 8px hsl(var(--accent));
+  }
+  @keyframes caret-blink {
+    50% { opacity: 0; }
   }
 }
 
@@ -305,7 +345,7 @@ html {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: hsl(222 47% 11%);
+  background: hsl(var(--background));
 }
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(hsl(var(--primary)), hsl(var(--accent)));

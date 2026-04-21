@@ -1,5 +1,12 @@
 import { GraduationCap, Target, Code, Heart } from "lucide-react";
+import { useTypewriter } from "@/hooks/useTypewriter";
 const About = () => {
+  const typed = useTypewriter([
+    "Computer Science Engineer.",
+    "Full Stack Developer.",
+    "Cybersecurity Enthusiast.",
+    "Lifelong Learner.",
+  ]);
   return <section id="about" className="py-20 relative overflow-hidden" style={{
     background: 'linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(217 32% 17%) 50%, hsl(222 47% 11%) 100%)'
   }}>
@@ -12,8 +19,8 @@ const About = () => {
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             About <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Me</span>
           </h2>
-          <p className="text-xl text-white/70">
-            Passionate about technology and continuous learning
+          <p className="text-xl text-white/70 min-h-[2rem]">
+            I'm a <span className="text-neon-accent font-semibold typing-caret">{typed}</span>
           </p>
         </div>
 
