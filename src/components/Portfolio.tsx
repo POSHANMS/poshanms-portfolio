@@ -96,7 +96,7 @@ const Portfolio = () => {
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-primary/10 to-transparent rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             My <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Portfolio</span>
           </h2>
@@ -114,13 +114,13 @@ const Portfolio = () => {
             return (
               <div 
                 key={project.id}
-                className={`flex flex-col lg:flex-row items-center gap-12 ${!isEven ? 'lg:flex-row-reverse' : ''}`}
+                className={`flex flex-col lg:flex-row items-center gap-12 reveal ${!isEven ? 'lg:flex-row-reverse' : ''}`}
               >
                 {/* Project Image/Visual */}
                 <div className="flex-1">
-                  <div className={`bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-soft border border-white/20`}>
+                  <div className={`bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-soft border border-white/20 hover-lift group`}>
                     <div className="flex items-center justify-center h-64 relative">
-                      <div className={`p-8 rounded-full ${colorClasses.icon}`}>
+                      <div className={`p-8 rounded-full ${colorClasses.icon} group-hover:scale-110 transition-transform duration-500 animate-float`}>
                         <Icon className="w-16 h-16" />
                       </div>
                       {/* Decorative elements */}
@@ -177,7 +177,7 @@ const Portfolio = () => {
                   <div className="flex gap-4">
                     <Button 
                       variant="default"
-                      className="gap-2"
+                      className="btn-magnetic gap-2"
                       onClick={() => window.open(project.github, '_blank')}
                     >
                       <Github className="w-4 h-4" />

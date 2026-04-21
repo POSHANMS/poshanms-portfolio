@@ -8,7 +8,7 @@ const About = () => {
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-accent/10 to-transparent rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             About <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Me</span>
           </h2>
@@ -20,8 +20,8 @@ const About = () => {
         <div className="max-w-4xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Main content */}
-            <div className="space-y-6">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-soft border border-white/20 hover:shadow-xl transition-all duration-300 group">
+            <div className="space-y-6 reveal-left">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-soft border border-white/20 hover-lift group">
                 <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-accent transition-colors">My Journey</h3>
                 <p className="text-white/80 leading-relaxed mb-6">
                   I aim to build strong skills in software development and emerging technologies while continuously learning and growing. Beyond academics, I enjoy coding projects that keep me motivated and inspired.
@@ -65,8 +65,8 @@ const About = () => {
               </div>
 
             {/* Education & Stats */}
-            <div className="space-y-6">
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:shadow-2xl transition-all duration-500 group">
+            <div className="space-y-6 reveal-right">
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover-lift group">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="p-3 bg-primary rounded-lg group-hover:scale-110 transition-transform">
                     <GraduationCap className="w-6 h-6 text-primary-foreground" />
