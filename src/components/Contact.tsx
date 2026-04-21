@@ -251,67 +251,51 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
-                      Your Name
-                    </label>
+                    <label htmlFor="name" className="block text-sm font-medium text-white mb-2">Your Name</label>
                     <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="w-full p-3 border border-white/30 rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth backdrop-blur-sm"
+                      type="text" id="name" name="name"
+                      value={formData.name} onChange={handleInputChange} onBlur={handleBlur}
+                      aria-invalid={!!errors.name}
+                      className={`w-full p-3 border rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:border-transparent transition-smooth backdrop-blur-sm ${errors.name ? 'border-destructive focus:ring-destructive' : 'border-white/30 focus:ring-primary'}`}
                       placeholder="John Doe"
-                      required
                     />
+                    {errors.name && <p className="mt-1 text-xs text-destructive animate-fade-in">{errors.name}</p>}
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
-                      Email Address
-                    </label>
+                    <label htmlFor="email" className="block text-sm font-medium text-white mb-2">Email Address</label>
                     <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="w-full p-3 border border-white/30 rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth backdrop-blur-sm"
+                      type="email" id="email" name="email"
+                      value={formData.email} onChange={handleInputChange} onBlur={handleBlur}
+                      aria-invalid={!!errors.email}
+                      className={`w-full p-3 border rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:border-transparent transition-smooth backdrop-blur-sm ${errors.email ? 'border-destructive focus:ring-destructive' : 'border-white/30 focus:ring-primary'}`}
                       placeholder="john@example.com"
-                      required
                     />
+                    {errors.email && <p className="mt-1 text-xs text-destructive animate-fade-in">{errors.email}</p>}
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-white mb-2">
-                    Subject
-                  </label>
+                  <label htmlFor="subject" className="block text-sm font-medium text-white mb-2">Subject</label>
                   <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    className="w-full p-3 border border-white/30 rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth backdrop-blur-sm"
+                    type="text" id="subject" name="subject"
+                    value={formData.subject} onChange={handleInputChange} onBlur={handleBlur}
+                    aria-invalid={!!errors.subject}
+                    className={`w-full p-3 border rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:border-transparent transition-smooth backdrop-blur-sm ${errors.subject ? 'border-destructive focus:ring-destructive' : 'border-white/30 focus:ring-primary'}`}
                     placeholder="Project Discussion"
-                    required
                   />
+                  {errors.subject && <p className="mt-1 text-xs text-destructive animate-fade-in">{errors.subject}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
-                    Message
-                  </label>
+                  <label htmlFor="message" className="block text-sm font-medium text-white mb-2">Message</label>
                   <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows={5}
-                    className="w-full p-3 border border-white/30 rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth resize-none backdrop-blur-sm"
+                    id="message" name="message" rows={5}
+                    value={formData.message} onChange={handleInputChange} onBlur={handleBlur}
+                    aria-invalid={!!errors.message}
+                    className={`w-full p-3 border rounded-lg bg-white/10 text-white placeholder-white/50 focus:ring-2 focus:border-transparent transition-smooth resize-none backdrop-blur-sm ${errors.message ? 'border-destructive focus:ring-destructive' : 'border-white/30 focus:ring-primary'}`}
                     placeholder="Tell me about your project or just say hello!"
-                    required
                   />
+                  {errors.message && <p className="mt-1 text-xs text-destructive animate-fade-in">{errors.message}</p>}
                 </div>
 
                 <Button 

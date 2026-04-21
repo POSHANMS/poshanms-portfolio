@@ -117,16 +117,18 @@ const Portfolio = () => {
                 className={`flex flex-col lg:flex-row items-center gap-12 reveal ${!isEven ? 'lg:flex-row-reverse' : ''}`}
               >
                 {/* Project Image/Visual */}
-                <div className="flex-1">
-                  <div className={`bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-soft border border-white/20 hover-lift group`}>
+                <div className="flex-1 w-full">
+                  <div className="relative bg-white/[0.03] backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover-lift group overflow-hidden transition-all duration-500 hover:border-primary/40 hover:shadow-neon">
+                    {/* Animated grid backdrop */}
+                    <div className="absolute inset-0 bg-grid-neon opacity-20 group-hover:opacity-40 transition-opacity" />
+                    {/* Neon gradient glow */}
+                    <div className="absolute -inset-1 bg-gradient-to-r from-primary/0 via-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-500" />
                     <div className="flex items-center justify-center h-64 relative">
-                      <div className={`p-8 rounded-full ${colorClasses.icon} group-hover:scale-110 transition-transform duration-500 animate-float`}>
+                      <div className={`p-8 rounded-full ${colorClasses.icon} group-hover:scale-110 transition-transform duration-500 animate-float shadow-neon`}>
                         <Icon className="w-16 h-16" />
                       </div>
-                      {/* Decorative elements */}
-                      <div className="absolute top-4 right-4 w-12 h-12 bg-primary/20 rounded-full"></div>
-                      <div className="absolute bottom-6 left-6 w-8 h-8 bg-accent/30 rounded-full"></div>
-                      <div className="absolute top-1/2 left-4 w-4 h-4 bg-success/40 rounded-full"></div>
+                      <div className="absolute top-4 right-4 w-12 h-12 bg-primary/20 rounded-full blur-md"></div>
+                      <div className="absolute bottom-6 left-6 w-8 h-8 bg-accent/30 rounded-full blur-md"></div>
                     </div>
                   </div>
                 </div>
