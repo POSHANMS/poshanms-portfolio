@@ -76,7 +76,7 @@ const Services = () => {
       <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-l from-primary/10 to-accent/10 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             My <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Areas of Interest</span>
           </h2>
@@ -93,7 +93,8 @@ const Services = () => {
             return (
               <div 
                 key={index} 
-                className={`${colorClasses.bg} rounded-2xl p-8 shadow-soft hover:shadow-2xl transition-all duration-500 group backdrop-blur-sm border border-white/10`}
+                className={`${colorClasses.bg} reveal hover-lift rounded-2xl p-8 shadow-soft transition-all duration-500 group backdrop-blur-sm border border-white/10`}
+                data-reveal-delay={index * 120}
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className={`p-4 rounded-xl ${colorClasses.icon} group-hover:scale-110 transition-smooth`}>
@@ -141,7 +142,7 @@ const Services = () => {
               variant="hero"
               size="lg"
               onClick={scrollToContact}
-              className="hover:scale-105 transition-transform"
+              className="btn-magnetic hover:scale-105 transition-transform"
             >
               Let's Work Together
             </Button>

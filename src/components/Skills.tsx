@@ -83,7 +83,7 @@ const Skills = () => {
       <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-r from-accent/10 to-primary/10 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             My <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Skills</span>
           </h2>
@@ -98,9 +98,13 @@ const Skills = () => {
             const Icon = category.icon;
             
             return (
-              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-soft hover:shadow-2xl transition-all duration-500 border border-white/20">
+              <div
+                key={index}
+                className="reveal bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-soft hover-lift border border-white/20 group"
+                data-reveal-delay={(index % 4) * 100}
+              >
                 <div className="flex items-center gap-3 mb-6">
-                  <div className={`p-3 rounded-lg ${colorClasses.icon}`}>
+                  <div className={`p-3 rounded-lg ${colorClasses.icon} group-hover:scale-110 transition-transform`}>
                     <Icon className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-bold text-white">{category.title}</h3>

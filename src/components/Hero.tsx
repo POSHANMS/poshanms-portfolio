@@ -16,9 +16,9 @@ const Hero = () => {
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Profile Image */}
-          <div className="flex-shrink-0">
-            <div className="relative">
-              <div className="w-80 h-80 rounded-full hero-gradient p-1 shadow-2xl backdrop-blur-sm">
+          <div className="flex-shrink-0 reveal-left">
+            <div className="relative animate-float">
+              <div className="w-80 h-80 rounded-full hero-gradient p-1 shadow-2xl backdrop-blur-sm animate-glow-pulse">
                 <img src={profilePicture} alt="Poshan M S - Computer Science Student" className="w-full h-full rounded-full object-cover object-[center_35%]" />
               </div>
               {/* Floating elements for visual interest */}
@@ -29,7 +29,7 @@ const Hero = () => {
           </div>
 
           {/* Hero Content */}
-          <div className="flex-1 text-center lg:text-left">
+          <div className="flex-1 text-center lg:text-left reveal-right">
             <div className="space-y-8">
               <div className="space-y-6">
                 <div>
@@ -92,15 +92,15 @@ const Hero = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button size="lg" className="hero-gradient text-white border-0 hover:opacity-90 transition-smooth shadow-accent hover:shadow-2xl" onClick={() => scrollToSection('portfolio')}>
+                <Button size="lg" className="btn-magnetic hero-gradient text-white border-0 hover:opacity-90 transition-smooth shadow-accent hover:shadow-2xl" onClick={() => scrollToSection('portfolio')}>
                   View My Work
                 </Button>
-                <Button size="lg" className="bg-white/20 text-white border border-white/30 hover:bg-white/30 hover:text-white transition-smooth backdrop-blur-sm" onClick={() => scrollToSection('contact')}>
+                <Button size="lg" className="btn-magnetic bg-white/20 text-white border border-white/30 hover:bg-white/30 hover:text-white transition-smooth backdrop-blur-sm" onClick={() => scrollToSection('contact')}>
                   Get In Touch
                 </Button>
                 <Button 
                   size="lg" 
-                  className="bg-primary/20 text-white border border-primary/30 hover:bg-primary/30 hover:text-white transition-smooth backdrop-blur-sm" 
+                  className="btn-magnetic bg-primary/20 text-white border border-primary/30 hover:bg-primary/30 hover:text-white transition-smooth backdrop-blur-sm" 
                   onClick={() => window.open('https://drive.google.com/file/d/13Jdc_zSQwzl5N7UcRtLMRkUwtL-PKTuJ/view?usp=sharing', '_blank')}
                 >
                   Download Resume

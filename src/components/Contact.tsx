@@ -134,7 +134,7 @@ const Contact = () => {
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-accent/10 to-transparent rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Let's <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Connect</span>
           </h2>
@@ -146,7 +146,7 @@ const Contact = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Information */}
-            <div className="space-y-8">
+            <div className="space-y-8 reveal-left">
               <div>
                 <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
                 <p className="text-white/80 leading-relaxed mb-8">
@@ -166,7 +166,7 @@ const Contact = () => {
                     <a
                       key={index}
                       href={info.href}
-                      className="flex items-center gap-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl shadow-soft hover:shadow-2xl transition-all duration-300 group border border-white/10"
+                      className="flex items-center gap-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl shadow-soft hover-lift group border border-white/10"
                       target={info.href.startsWith('http') ? '_blank' : '_self'}
                       rel={info.href.startsWith('http') ? 'noopener noreferrer' : ''}
                     >
@@ -197,7 +197,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-white/20 hover:shadow-accent/20 transition-all duration-500">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-white/20 hover:shadow-accent/20 transition-all duration-500 reveal-right">
               <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -270,7 +270,7 @@ const Contact = () => {
                   type="submit"
                   variant="hero"
                   size="lg"
-                  className="w-full"
+                  className="w-full btn-magnetic"
                   disabled={isSubmitting}
                 >
                   <Send className="w-4 h-4 mr-2" />
